@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cálculo de Média do Aluno</title>
+    <style>
+        /* O arquivo CSS deve estar vazio conforme solicitado */
+    </style>
+</head>
+<body>
+    <script>
+        // Função para criar os elementos necessários via DOM
+        function criarElementos() {
+            // Criar e adicionar o título
+            var titulo = document.createElement('h1');
+            titulo.textContent = 'Cálculo de Média do Aluno';
+            document.body.appendChild(titulo);
+
+            // Criar e adicionar o formulário para as notas
+            var form = document.createElement('form');
+            form.innerHTML = '<input type="text" id="nomealuno" placeholder="Digite o nome do aluno" required>' +
+                             '<input type="number" id="nota1" placeholder="Digite a 1º nota" required>' +
+                             '<input type="number" id="nota2" placeholder="Digite a 2º nota" required>' +
+                             '<input type="number" id="nota3" placeholder="Digite a 3º nota" required>' +
+                             '<button type="button" onclick="calcularMedia()">Calcular Média</button>';
+            document.body.appendChild(form);
+
+            // Criar e adicionar o elemento para mostrar o resultado
+            var resultado = document.createElement('div');
+            resultado.id = 'resultado';
+            document.body.appendChild(resultado);
+
+
+            // adicionando estilização ao codigo
+            
+        }
+
+        // Função para calcular a média e mostrar o status do aluno
+        function calcularMedia() {
+            var nome = document.getElementById('nomealuno').value;
+            var nota1 = parseFloat(document.getElementById('nota1').value);
+            var nota2 = parseFloat(document.getElementById('nota2').value);
+            var nota3 = parseFloat(document.getElementById('nota3').value);
+            var media = (nota1 + nota2 + nota3) / 3;
+            var statusAluno;
+
+            if(media < 5) {
+                statusAluno = 'Reprovado';
+            } else if(media >= 5 && media < 7) {
+                statusAluno = 'Em recuperação';
+            } else {
+                statusAluno = 'Acima da média';
+            }
+
+            document.getElementById('resultado').textContent = `Aluno(a) ${nome}, sua média é: ` + media.toFixed(2) + ' - Status: ' + statusAluno;
+        }
+
+        // Chamar a função para criar os elementos ao carregar a página
+        window.onload = criarElementos;
+    </script>
+</body>
+</html>
