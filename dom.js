@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     topBar.style.alignItems = 'center';
     topBar.style.paddingRight = '20px';
     topBar.style.justifyContent = 'space-between';
+    topBar.style.position = 'fixed';
     document.body.appendChild(topBar);
 
     // Criação do botão de reset
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         form.reset();
         document.getElementById('resultado').textContent = '';
     };
-    resetButton.style.marginLeft = '40px';
+    resetButton.style.marginLeft = '80px';
     resetButton.style.padding = '10px 20px';
     resetButton.style.border = 'none';
     resetButton.style.borderRadius = '5px';
@@ -38,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Criação do link para o GitHub
     var githubButton = document.createElement('a');
     githubButton.textContent = 'Meu GitHub';
-    githubButton.href = 'https://github.com/seuUsuario';
+    githubButton.href = 'https://github.com/ivsong0m3s';
     githubButton.target = '_blank';
     githubButton.style.marginRight = '40px';
     githubButton.style.padding = '10px 20px';
@@ -53,12 +54,16 @@ document.addEventListener('DOMContentLoaded', function() {
     var titulo = document.createElement('h1');
     titulo.textContent = 'Cálculo de Média do Aluno';
     titulo.style.textAlign = 'center';
-    titulo.style.marginTop = '50px';
+    titulo.style.marginTop = '90px';
+    titulo.style.marginBottom = '30px';
+
     document.body.appendChild(titulo);
 
     // Criação do formulário
     var form = document.createElement('form');
     form.id = 'form-notas';
+    form.style.width = '500px';
+    form.style.height = '500px';
     form.style.background = '#ccc';
     form.style.padding = '100px';
     form.style.borderRadius = '5px';
@@ -67,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
     form.style.justifyContent = 'center';
     form.style.alignItems = 'center';
     form.style.flexDirection = 'column';
-    form.style.margin = '100px';
+    form.style.margin = '80px';
     document.body.appendChild(form);
 
     // Criação dos inputs
@@ -149,7 +154,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Criação da div de resultado
     var resultadoDiv = document.createElement('div');
     resultadoDiv.id = 'resultado';
-    document.body.appendChild(resultadoDiv);
+    resultadoDiv.style.marginTop = '80px';
+    form.appendChild(resultadoDiv);
 
     // Criação da faixa preta no rodapé
     var downBar = document.createElement('div');
