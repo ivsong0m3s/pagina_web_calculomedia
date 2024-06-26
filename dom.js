@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Criação do link para o GitHub
     var githubButton = document.createElement('a');
     githubButton.textContent = 'Meu GitHub';
-    githubButton.href = 'https://github.com/ivsong0m3s';
+    githubButton.href = 'https://github.com/ivsong0m3s/pagina_web_calculomedia.git';
     githubButton.target = '_blank';
     githubButton.style.marginRight = '40px';
     githubButton.style.padding = '10px 20px';
